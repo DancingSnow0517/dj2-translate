@@ -20,4 +20,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: translated Better Questing
-          path: DefaultQuests.json
+          path: DefaultQuests-zh-CN.json.json
