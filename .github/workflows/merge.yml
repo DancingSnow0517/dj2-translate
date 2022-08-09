@@ -1,0 +1,23 @@
+on: push
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    name: Merge Better Questing book
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: run merge
+        run: |
+          python merge.py
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: translated Better Questing
+          path: DefaultQuests-zh-CN.json
